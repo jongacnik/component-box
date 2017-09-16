@@ -151,6 +151,5 @@ function view () {
 
 ## Todo
 
-- [ ] Asserts
-- [ ] Logger
+- [x] Asserts
 - [ ] Tests

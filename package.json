@@ -12,6 +12,7 @@
   "author": "Jon Gacnik <jon@folderstudio.com> (http://jongacnik.com)",
   "license": "MIT",
   "dependencies": {
+    "nanoassert": "^1.1.0",
     "xtend": "^4.0.1"
   }
 }
