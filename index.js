@@ -41,8 +41,8 @@ box.delete = function (key) {
 }
 
 box._inspect = function () {
-  return {
-    cache: x(cache, {}),
-    components: x(components, {})
-  }
+  return x({}, {
+    cache: cache,
+    components: components
+  })
 }
