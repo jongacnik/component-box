@@ -7,6 +7,10 @@
    <a href="https://www.npmjs.com/package/component-box">
     <img src="https://img.shields.io/npm/v/component-box.svg?style=flat-square" alt="NPM version" />
   </a>
+  <a href="https://travis-ci.org/jongacnik/component-box">
+    <img src="https://img.shields.io/travis/jongacnik/component-box/master.svg?style=flat-square"
+      alt="Build Status" />
+  </a>
 </div>
 
 <br />
