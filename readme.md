@@ -4,6 +4,9 @@
   <a href="https://nodejs.org/api/documentation.html#documentation_stability_index">
     <img src="https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square" alt="Stability" />
   </a>
+   <a href="https://www.npmjs.com/package/component-box">
+    <img src="https://img.shields.io/npm/v/component-box.svg?style=flat-square" alt="NPM version" />
+  </a>
 </div>
 
 <br />
