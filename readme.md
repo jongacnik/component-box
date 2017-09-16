@@ -152,4 +152,4 @@ function view () {
 ## Todo
 
 - [x] Asserts
-- [ ] Tests
+- [x] Tests
