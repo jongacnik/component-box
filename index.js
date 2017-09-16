@@ -39,3 +39,10 @@ box.delete = function (key) {
 
   delete cache[key]
 }
+
+box._inspect = function () {
+  return {
+    cache: x(cache, {}),
+    components: x(components, {})
+  }
+}
