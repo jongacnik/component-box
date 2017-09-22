@@ -10,11 +10,11 @@ function box (name, key) {
   assert.ok(typeof name === 'string' || typeof name === 'number', 'component-box: name should be type string or number')
   assert.ok(components[name], 'component-box: no component handler found for [' + name + ']')
 
-  if (key && cache[key]) {
-    return cache[key]
+  if (key && cache[name + '-' + key]) {
+    return cache[name + '-' + key]
   } else if (key) {
-    cache[key] = components[name]()
-    return cache[key]
+    cache[name + '-' + key] = components[name]()
+    return cache[name + '-' + key]
   } else if (key === false) {
     return components[name]() 
   } else if (name && cache[name]) {

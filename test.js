@@ -26,7 +26,7 @@ test('c(\'component\', \'custom\')', function (t) {
 
   var box = c._inspect()
 
-  t.ok('custom' in box.cache, '`component` created and cached as `custom`')
+  t.ok('component-custom' in box.cache, '`component` created and cached as `custom`')
   t.end()
 })
 
