@@ -39,9 +39,9 @@ box.use = function (newcomponents) {
 }
 
 box.cache = function(cache) {
-  assert.ok(typeof cache.get, 'function', 'component-box.cache: cache should have get property of type function')
-  assert.ok(typeof cache.set, 'function', 'component-box.cache: cache should have set property of type function')
-  assert.ok(typeof cache.remove, 'function', 'component-box.cache: cache should have remove property of type function')
+  assert.equal(typeof cache.get, 'function', 'component-box.cache: cache should have get property of type function')
+  assert.equal(typeof cache.set, 'function', 'component-box.cache: cache should have set property of type function')
+  assert.equal(typeof cache.remove, 'function', 'component-box.cache: cache should have remove property of type function')
   _cache = cache
 }
 
