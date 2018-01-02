@@ -13,7 +13,7 @@ function box (name, key) {
   if (!_cache) _cache = require('./lib/cache')()
 
   if (key && _cache.get(name + '-' + key)) {
-    return _cache.get[name + '-' + key]
+    return _cache.get(name + '-' + key)
   } else if (key) {
     var value = components[name]()
     _cache.set(name + '-' + key, value)
