@@ -17,7 +17,7 @@ test('c(\'component\')', function (t) {
 
   var box = c._inspect()
 
-  t.ok('component' in box.cache, '`component` created and cached as `component`')
+  t.ok(box._cache.get('component'), '`component` created and cached as `component`')
   t.end()
 })
 
@@ -26,7 +26,7 @@ test('c(\'component\', \'custom\')', function (t) {
 
   var box = c._inspect()
 
-  t.ok('component-custom' in box.cache, '`component` created and cached as `custom`')
+  t.ok(box._cache.get('component-custom'), '`component` created and cached as `custom`')
   t.end()
 })
 
@@ -35,7 +35,7 @@ test('c.delete(\'component\')', function (t) {
 
   var box = c._inspect()
 
-  t.notOk('component' in box.cache, '`component` uncached')
+  t.notOk(box._cache.get('component'), '`component` uncached')
   t.end()
 })
 
@@ -44,6 +44,6 @@ test('c(\'component\', false)', function (t) {
 
   var box = c._inspect()
 
-  t.notOk('component' in box.cache, '`component` created and not cached')
+  t.notOk(box._cache.get('component'), '`component` created and not cached')
   t.end()
 })
