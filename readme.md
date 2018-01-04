@@ -116,6 +116,24 @@ c.delete('mycomponent')
 c('mycomponent')
 ```
 
+### `c.cache(cache)`
+
+Use a custom cache implementation. Expects an object with `.get`, `.set`, and `.remove` methods.
+
+```js
+var c = require('component-box')
+
+c.cache(require('lru')(2)) // only cache 2 instances, using lru eviction
+
+c.use({
+  post: postComponent
+})
+
+c('post', 'slug1').render()
+c('post', 'slug2').render()
+c('post', 'slug3').render() // evict 'post-slug1' and return new 'post-slug3' instance
+```
+
 ## Alternative Pattern
 
 You could also choose to only return the `.render` method from nanocomponent, allowing for a slightly more concise syntax:
