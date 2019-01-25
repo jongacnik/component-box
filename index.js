@@ -6,19 +6,28 @@ var _cache = null
 
 module.exports = box
 
-function box (name, key) {
+function box(name, opts) {
   assert.ok(typeof name === 'string' || typeof name === 'number', 'component-box: name should be type string or number')
   assert.ok(components[name], 'component-box: no component handler found for [' + name + ']')
+
+  var key
+  var constructorArgs
+  var shouldCache
+  if (opts) {
+    key = opts.key
+    constructorArgs = opts.constructorArgs
+    shouldCache = opts.cache
+  }
 
   if (!_cache) _cache = require('./lib/cache')()
 
   if (key && _cache.get(name + '-' + key)) {
     return _cache.get(name + '-' + key)
   } else if (key) {
-    var value = components[name]()
+    var value = components[name].apply(null, constructorArgs)
     _cache.set(name + '-' + key, value)
     return value
-  } else if (key === false) {
+  } else if (shouldCache === false) {
     return components[name]()
   } else if (name && _cache.get(name)) {
     return _cache.get(name)
@@ -38,7 +47,7 @@ box.use = function (newcomponents) {
   components = x(components, newcomponents)
 }
 
-box.cache = function(cache) {
+box.cache = function (cache) {
   assert.equal(typeof cache.get, 'function', 'component-box.cache: cache should have get property of type function')
   assert.equal(typeof cache.set, 'function', 'component-box.cache: cache should have set property of type function')
   assert.equal(typeof cache.remove, 'function', 'component-box.cache: cache should have remove property of type function')

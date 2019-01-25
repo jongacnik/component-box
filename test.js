@@ -22,7 +22,7 @@ test('c(\'component\')', function (t) {
 })
 
 test('c(\'component\', \'custom\')', function (t) {
-  c('component', 'custom')
+  c('component', { key: 'custom' })
 
   var box = c._inspect()
 
@@ -40,7 +40,7 @@ test('c.delete(\'component\')', function (t) {
 })
 
 test('c(\'component\', false)', function (t) {
-  c('component', false)
+  c('component', { cache: false })
 
   var box = c._inspect()
 
